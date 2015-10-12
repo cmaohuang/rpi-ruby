@@ -1,6 +1,6 @@
 # Pull base image
-FROM resin/rpi-raspbian:wheezy
-MAINTAINER Govinda fichtner <govinda@hypriot.com>
+FROM resin/rpi-raspbian:jessie
+MAINTAINER James Huang
 
 RUN apt-get update \
 	&& apt-get install -y --no-install-recommends \
@@ -16,8 +16,8 @@ RUN apt-get update \
 	&& rm -rf /var/lib/apt/lists/*
 
 ENV RUBY_MAJOR 2.2
-ENV RUBY_VERSION 2.2.2
-ENV RUBY_DOWNLOAD_SHA256 5ffc0f317e429e6b29d4a98ac521c3ce65481bfd22a8cf845fa02a7b113d9b44
+ENV RUBY_VERSION 2.2.3
+ENV RUBY_DOWNLOAD_SHA256 df795f2f99860745a416092a4004b016ccf77e8b82dec956b120f18bdc71edce
 
 # some of ruby's build scripts are written in ruby
 # we purge this later to make sure our final image uses what we just built
